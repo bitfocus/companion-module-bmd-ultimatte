@@ -1,0 +1,24 @@
+{
+  "name": "companion-module-blackmagic-ultimatte",
+  "version": "1.0.0",
+  "api_version": "1.0.0",
+  "description": "Module to control a Blackmagic Ultimatte",
+  "main": "index.js",
+  "keywords": ["Blackmagic", "Ultimatte", "Keyer"],
+  "manufacturer": "Blackmagic Design",
+  "product": "Ultimatte",
+  "shortname": "bmd-ultimatte",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Skyler Ehly <skyler@skylerjehly.com>",
+  "homepage": "https://github.com/bitfocus/companion-module-bmd-ultimatte#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitfocus/companion-module-bmd-ultimatte/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitfocus/companion-module-bmd-ultimatte.git"
+  }
+}
