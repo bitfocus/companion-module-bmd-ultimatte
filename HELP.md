@@ -11,4 +11,4 @@ This module was designed for the Blackmagic Design Ultimatte 12. There is not an
 
 ## Actions
 ### LY Fade Mix
-Changes the mix level of LY Fade.
+Changes the mix level (1-10000) of LY Fade.
