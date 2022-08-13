@@ -245,7 +245,7 @@ instance.prototype.action = function(action) {
 
 	switch (action.action) {
 		case 'ly_fade_mix':
-			cmd = self.makeControlCommand(self.CONTROL, self.LY_FADE_MIX, opt.controlValue);
+			cmd = self.makeControlCommand(self.LY_FADE_MIX, opt.controlValue);
 			break;
 
 		// Other cases go here
@@ -265,11 +265,9 @@ instance.prototype.action = function(action) {
  * @param contValue      The new value of the control variable
  * @returns              The built command to send
  */
-instance.prototype.makeControlCommand = function(header, contVar, contValue) {
+instance.prototype.makeControlCommand = function(contVar, contValue) {
 	var self = this;
-	var cmd = header;
-	self.CONTROL = "CONTROL"; //TODO - remove
-	cmd += ':\n' + contVar + ': ' + contValue + '\n\n';
+	var cmd = self.CONTROL + ':\n' + contVar + ': ' + contValue + '\n\n';
 	return cmd;
 
 };
@@ -278,5 +276,5 @@ instance.prototype.makeControlCommand = function(header, contVar, contValue) {
 
 instance_skel.extendedBy(instance);
 exports = module.exports = instance;
-var cmd = instance.prototype.makeControlCommand("LY Fade Mix", 100); //TODO - remove
-console.log(cmd); //TODO - remove
+//var cmd = instance.prototype.makeControlCommand("LY Fade Mix", 100); //TODO - remove
+//console.log(cmd); //TODO - remove
