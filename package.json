@@ -1,5 +1,5 @@
 {
-  "name": "companion-module-blackmagic-ultimatte",
+  "name": "bmd-ultimatte",
   "version": "1.0.0",
   "api_version": "1.0.0",
   "description": "Module to control a Blackmagic Ultimatte",
