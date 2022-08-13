@@ -1,6 +1,6 @@
 # Blackmagic Design Ultimatte
 
-This module was designed for the Blackmagic Design Ultimatte 12.
+This module was designed for the Blackmagic Design Ultimatte 12. There is not an ethernet protocol with earlier versions.
 
 
 ## Configuration
