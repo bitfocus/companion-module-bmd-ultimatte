@@ -1,22 +1,11 @@
 var tcp = require('../../tcp');
 var instance_skel = require('../../instance_skel');
+const Constants_1 = require("./constants");
 var debug;
 var log;
 
 function instance(system, id, config) {
 	var self = this;
-
-	// Controls
-	self.LY_FADE_MIX = "LY Fade Mix";
-
-	// Headers
-	self.CONTROL = "CONTROL";
-	self.FILE = "FILE";
-	self.GPI = "GPI";
-	self.PING = "PING";
-	self.QUIT = "QUIT";
-
-
 
 	// A promise that's resolved when the socket connects to the matrix.
 	self.PromiseConnected = null;
@@ -267,7 +256,7 @@ instance.prototype.action = function(action) {
  */
 instance.prototype.makeControlCommand = function(contVar, contValue) {
 	var self = this;
-	var cmd = self.CONTROL + ':\n' + contVar + ': ' + contValue + '\n\n';
+	var cmd = Constants_1.Constants.Headers.CONTROL + ':\n' + contVar + ': ' + contValue + '\n\n';
 	return cmd;
 
 };
@@ -276,5 +265,4 @@ instance.prototype.makeControlCommand = function(contVar, contValue) {
 
 instance_skel.extendedBy(instance);
 exports = module.exports = instance;
-//var cmd = instance.prototype.makeControlCommand("LY Fade Mix", 100); //TODO - remove
-//console.log(cmd); //TODO - remove
+
