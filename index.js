@@ -177,6 +177,7 @@ instance.prototype.config_fields = function() {
 			id: 'host',
 			label: 'Target IP',
 			width: 4,
+			value: "192.168.10.220",
 			regex: self.REGEX_IP
 		},
 		{
