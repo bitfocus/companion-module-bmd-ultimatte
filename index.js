@@ -165,8 +165,8 @@ instance.prototype.config_fields = function() {
 			type: 'textinput',
 			id: 'host',
 			label: 'Target IP',
-			width: 4,
-			value: "192.168.10.220",
+			width: 5,
+			default: "192.168.10.220",
 			regex: self.REGEX_IP
 		},
 		{
@@ -174,7 +174,7 @@ instance.prototype.config_fields = function() {
 			id: 'port',
 			label: 'Target Port',
 			width: 4,
-			value: 9998,
+			default: 9998,
 			regex: self.REGEX_PORT
 		}
 	]
@@ -205,7 +205,7 @@ instance.prototype.actions = function(system) {
 
 	self.setActions({
 		'ly_fade_mix': {
-			label: self.LY_FADE_MIX,
+			label: "LY Fade Mix",
 			options: [
 				{
 					type: 'textwithvariables',
@@ -234,7 +234,7 @@ instance.prototype.action = function(action) {
 
 	switch (action.action) {
 		case 'ly_fade_mix':
-			cmd = self.makeControlCommand(self.LY_FADE_MIX, opt.controlValue);
+			cmd = self.makeControlCommand(Constants_1.Constants.Controls.LY_FADE_MIX, opt.controlValue);
 			break;
 
 		// Other cases go here
