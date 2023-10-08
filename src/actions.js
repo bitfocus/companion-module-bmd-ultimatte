@@ -14,7 +14,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -215,7 +215,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -234,7 +234,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -253,7 +253,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -272,7 +272,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -291,7 +291,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -310,7 +310,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -329,7 +329,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -348,7 +348,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -367,7 +367,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
@@ -386,7 +386,7 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
-					regex: self.REGEX_NUMBER,
+					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {

@@ -3,6 +3,7 @@ const { TCPHelper, InstanceStatus } = require('@companion-module/base');
 module.exports = {
 	initTCP: function() {
 		let self = this;
+		let receivebuffer = '';
 	
 		if (self.socket !== undefined) {
 			self.socket.destroy();
@@ -13,13 +14,16 @@ module.exports = {
 			self.socket = new TCPHelper(self.config.host, self.config.port);
 
 			self.socket.on('connect', function () {
-				self.setVariable('connect_status', 'Connected');
 				self.updateStatus(InstanceStatus.Ok);
 			});
 	
-			self.socket.on('data', function(data) {
-				self.response = data;
-				self.checkVariables();
+			// separate buffered stream into lines with responses
+			self.socket.on('data', function (chunk) {
+
+			});
+	
+			self.socket.on('receiveline', function (line) {
+
 			});
 	
 			self.socket.on('error', function (err) {
@@ -28,6 +32,15 @@ module.exports = {
 				self.updateStatus(InstanceStatus.Error, err.message);
 			});
 		}
+	},
+
+	processInformation: function(key, data) {
+		let self = this;
+	
+
+	
+		self.checkFeedbacks();
+		self.checkVariables();	
 	},
 
 	sendCommand: function(cmd) {
