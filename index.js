@@ -24,6 +24,11 @@ class ultimatteInstance extends InstanceBase {
 			...constants,
 			...utils
 		})
+
+		this.stash = [];
+		this.command = null;
+
+		this.data = {};
 	}
 
 	async destroy() {
@@ -44,6 +49,7 @@ class ultimatteInstance extends InstanceBase {
 		this.initActions()
 		this.initFeedbacks()
 		this.initVariables()
+		this.checkVariables();
 		this.initPresets()
 
 		this.initTCP();

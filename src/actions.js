@@ -509,6 +509,91 @@ module.exports = {
 			}
 		};
 
+		//Rotary Actions
+		actions.offset_controls = {
+			name: 'Offset Controls',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Control',
+					id: 'controlSel',
+					default: self.controls_rotary[0].id,
+					choices: self.controls_rotary,
+				},
+				{
+					type: 'dropdown',
+					label: 'Direction',
+					id: 'direction',
+					default: 'Up',
+					choices: self.buildDropdownExact(['Up', 'Down']),
+				},
+				{
+					type: 'textinput',
+					label: 'Offset Amount',
+					id: 'offset',
+					default: 1,
+					useVariables: true
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+
+				//get the offset object based on the control selection
+				let control = self.controls_rotary.find((control) => control.id === opt.controlSel);
+				if (control) {
+					console.log('control is valid');
+					let min = control.min;
+					let max = control.max;
+
+					let currentValue = self.data[control.id];
+					if (currentValue === undefined) {
+						console.log('current value was undefined')
+						currentValue = 0;
+					}
+					currentValue = parseInt(currentValue);
+
+					console.log('current value: ' + currentValue)
+
+					let newAmount = currentValue;
+
+					let offset = await self.parseVariablesInString(opt.offset);
+					offset = parseInt(offset);
+					//make sure offset is not NaN
+					if (isNaN(offset)) {
+						offset = 0;
+					}
+
+					console.log('offset: ' + offset)
+
+					if (opt.direction == 'Up') {
+						newAmount = currentValue + offset;
+					}
+					else {
+						newAmount = currentValue - offset;
+					}
+
+					console.log('new amount: ' + newAmount)
+
+					if (newAmount < min) {
+						newAmount = min;
+					}
+					else if (newAmount > max) {
+						newAmount = max;
+					}
+
+					console.log('final new amount: ' + newAmount);
+
+					let cmd = self.makeControlCommand(control.label, newAmount);
+
+					console.log('cmd: ' + cmd);
+					self.sendCommand(cmd);
+				}
+				else {
+					console.log('control is invalid');
+				}
+			}
+		}
+
 		self.setActionDefinitions(actions);
 	}
 }
