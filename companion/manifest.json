@@ -3,18 +3,18 @@
 	"name": "bmd-ultimatte",
 	"shortname": "bmd-ultimatte",
 	"description": "Module to control a Blackmagic Ultimatte",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-bmd-ultimatte.git",
 	"bugs": "https://github.com/bitfocus/companion-module-bmd-ultimatte/issues",
 	"maintainers": [
 		{
-			"name": "Skyler Ehly",
-			"email": "skyler@skylerjehly.com"
-		},
-		{
 			"name": "Joseph Adams",
 			"email": "josephdadams@gmail.com"
+		},
+		{
+			"name": "Skyler Ehly",
+			"email": "skyler@skylerjehly.com"
 		}
 	],
 	"legacyIds": [],
