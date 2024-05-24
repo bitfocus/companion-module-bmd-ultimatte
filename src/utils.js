@@ -117,6 +117,12 @@ module.exports = {
 		return cmd
 	},
 
+	makeCommand: function (header, param, value) {
+		let self = this
+		let cmd = header + ':\n' + param + ': ' + value + '\n\n'
+		return cmd
+	},
+
 	buildDropdownExact: function (droplist) {
 		let drop = []
 		for (let i = 0; i < droplist.length; i++) {

@@ -594,6 +594,81 @@ module.exports = {
 			}
 		}
 
+		actions.advanced_flare_enable = {
+			name: 'Advanced Flare Enable',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'On/Off',
+					id: 'controlValue',
+					default: 'On',
+					choices: onoffdrop,
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+				let cmd = self.makeControlCommand('Advanced Flare Enable', opt.controlValue);
+				self.sendCommand(cmd);
+			}
+		};
+
+		actions.file_load = {
+			name: 'Load File',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Filename',
+					id: 'value',
+					default: '',
+					useVariables: true
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+				let value = await self.parseVariablesInString(opt.value);
+				let cmd = self.makeCommand(self.Headers.FILE, 'Load', value);
+				self.sendCommand(cmd);
+			}
+		};
+
+		actions.file_save = {
+			name: 'Save File',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Filename',
+					id: 'value',
+					default: '',
+					useVariables: true
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+				let value = await self.parseVariablesInString(opt.value);
+				let cmd = self.makeCommand(self.Headers.FILE, 'Save', value);
+				self.sendCommand(cmd);
+			}
+		};
+
+		actions.file_delete = {
+			name: 'Delete File',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Filename',
+					id: 'value',
+					default: '',
+					useVariables: true
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+				let value = await self.parseVariablesInString(opt.value);
+				let cmd = self.makeCommand(self.Headers.FILE, 'Delete', value);
+				self.sendCommand(cmd);
+			}
+		};
+
 		self.setActionDefinitions(actions);
 	}
 }
