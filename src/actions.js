@@ -14,12 +14,14 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.LY_FADE_MIX, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.LY_FADE_MIX, value);
 				self.sendCommand(cmd);
 			}
 		};
@@ -215,16 +217,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.CUR_X, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.CUR_X, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.cur_y = {
 			name: 'Cursor Y',
 			options: [
@@ -234,16 +238,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.CUR_Y, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.CUR_Y, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.cur_2_x = {
 			name: 'Cursor 2 X',
 			options: [
@@ -253,16 +259,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.CUR_2_X, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.CUR_2_X, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.cur_2_y = {
 			name: 'Cursor 2 Y',
 			options: [
@@ -272,16 +280,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.CUR_2_Y, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.CUR_2_Y, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.matte_den = {
 			name: 'Matte Density',
 			options: [
@@ -291,16 +301,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.MATTE_DEN, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.MATTE_DEN, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.black_gloss = {
 			name: 'Black Gloss',
 			options: [
@@ -310,16 +322,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.BLACK_GLOSS, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.BLACK_GLOSS, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.shadow_lvl = {
 			name: 'Shadow Level',
 			options: [
@@ -329,16 +343,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.SHADOW_LEV, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.SHADOW_LEV, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.shadow_thr = {
 			name: 'Shadow Threshold',
 			options: [
@@ -348,16 +364,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.SHADOW_THR, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.SHADOW_THR, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.veil_mas = {
 			name: 'Veil Master',
 			options: [
@@ -367,16 +385,18 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.VEIL_MAS, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.VEIL_MAS, value);
 				self.sendCommand(cmd);
 			}
 		};
-		
+
 		actions.clean_lvl = {
 			name: 'Cleanup Level',
 			options: [
@@ -386,12 +406,14 @@ module.exports = {
 					id: 'controlValue',
 					tooltip: 'Value between 0-10000.',
 					default: '0',
+					useVariables: true,
 					//regex: self.REGEX_NUMBER,
 				},
 			],
 			callback: async function (action, bank) {
 				let opt = action.options;
-				let cmd = self.makeControlCommand(self.Controls.CLEAN_LEV, opt.controlValue);
+				let value = await self.parseVariablesInString(opt.controlValue);
+				let cmd = self.makeControlCommand(self.Controls.CLEAN_LEV, value);
 				self.sendCommand(cmd);
 			}
 		};
@@ -510,6 +532,52 @@ module.exports = {
 		};
 
 		//Rotary Actions
+		actions.set_control = {
+			name: 'Set Control Value',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Control',
+					id: 'controlSel',
+					default: self.controls_rotary[0].id,
+					choices: self.controls_rotary,
+				},
+				{
+					type: 'textinput',
+					label: 'Value',
+					id: 'controlValue',
+					tooltip: 'Value or variable. Will be clamped to the control\'s min/max.',
+					default: '0',
+					useVariables: true,
+				},
+			],
+			callback: async function (action, bank) {
+				let opt = action.options;
+
+				let control = self.controls_rotary.find((control) => control.id === opt.controlSel);
+				if (control) {
+					let value = await self.parseVariablesInString(opt.controlValue);
+					value = parseInt(value);
+					if (isNaN(value)) {
+						value = 0;
+					}
+
+					if (value < control.min) {
+						value = control.min;
+					}
+					else if (value > control.max) {
+						value = control.max;
+					}
+
+					let cmd = self.makeControlCommand(control.label, value);
+					self.sendCommand(cmd);
+				}
+				else {
+					self.log('debug', 'Set Control Value: control is invalid');
+				}
+			}
+		};
+
 		actions.offset_controls = {
 			name: 'Offset Controls',
 			options: [
