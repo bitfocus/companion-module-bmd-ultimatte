@@ -1,19 +1,19 @@
 {
-  "name": "bmd-ultimatte",
-  "version": "2.1.1",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bitfocus/companion-module-bmd-ultimatte.git"
-  },
-  "dependencies": {
-    "@companion-module/base": "~1.5.0"
-  },
-  "devDependencies": {
-    "@companion-module/tools": "^2.8.0"
-  }
+	"name": "bmd-ultimatte",
+	"version": "2.1.1",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-bmd-ultimatte.git"
+	},
+	"dependencies": {
+		"@companion-module/base": "~1.15.1"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^2.9.0"
+	}
 }
