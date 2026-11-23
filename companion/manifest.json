@@ -3,7 +3,7 @@
 	"name": "bmd-ultimatte",
 	"shortname": "bmd-ultimatte",
 	"description": "Module to control a Blackmagic Ultimatte",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-bmd-ultimatte.git",
 	"bugs": "https://github.com/bitfocus/companion-module-bmd-ultimatte/issues",
